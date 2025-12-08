@@ -1,0 +1,47 @@
+body {
+    background: #ffe6f2;
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    color: #cc2e7e;
+}
+
+.pink-header {
+    text-align: center;
+    background: #ffb3d9;
+    padding: 20px;
+    border-bottom: 4px solid #ff66b3;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #a8005b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+}
+
+button {
+    background: #ff4da6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff1a8c;
+}
