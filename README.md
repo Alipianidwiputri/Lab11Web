@@ -322,3 +322,14 @@ include "template/footer.php";
 
 
 <img width="1919" height="151" alt="image" src="https://github.com/user-attachments/assets/77f7d5d8-2960-47c4-b225-c924f8d1e78b" />
+
+
+config dan httaces
+<img width="621" height="317" alt="image" src="https://github.com/user-attachments/assets/2fa545d3-7cd6-4357-a538-b2f11f9d74e8" />
+
+database dan form
+<img width="588" height="282" alt="image" src="https://github.com/user-attachments/assets/fc10ceab-4e26-45e6-a9d3-cf71b00261fe" />
+
+header, footer, dan sidebar 
+<img width="754" height="346" alt="image" src="https://github.com/user-attachments/assets/d9d40a2b-81d8-4071-a74c-7120ac5e2f79" />
+
