@@ -10,14 +10,12 @@
 
 # Lab11Web
 
-<img width="399" height="205" alt="Screenshot 2025-12-08 104833" src="https://github.com/user-attachments/assets/bb14bf1e-b887-4363-af37-406bc96335c8" />
 
 
 
+**1. config**
 
-1. config
-
-Code 
+**Code**
 ```
 <?php
 $config = [
@@ -116,9 +114,9 @@ class Database
 }
 ?>
 ```
-4. class/Form.php
+**3. class/Form.php**
 
-Code
+**Code**
 ```
 <?php
 /**
@@ -209,9 +207,9 @@ class Form
 ?>
 ```
 
-5. .htaccess
+**4. .htaccess**
 
-Code
+**Code**
 ```
 apache
 <IfModule mod_rewrite.c>
@@ -223,9 +221,42 @@ apache
 </IfModule>
 ```
 
-6. template/header.php
+**5. index.php (Front Controller)**
 
-Code
+**Code**
+```
+<?php
+include "config.php";
+include "class/Database.php";
+include "class/Form.php";
+
+session_start();
+
+// ROUTING
+$url = isset($_GET['url']) ? $_GET['url'] : 'home/index';
+$segments = explode('/', trim($url, '/'));
+
+$mod = isset($segments[0]) ? $segments[0] : 'home';
+$page = isset($segments[1]) ? $segments[1] : 'index';
+
+$file = "module/{$mod}/{$page}.php";
+
+// LOAD TEMPLATE
+include "template/header.php";
+
+if (file_exists($file)) {
+    include $file;
+} else {
+    echo '<div class="error">Modul tidak ditemukan: ' . $mod . '/' . $page . '</div>';
+}
+
+include "template/footer.php";
+?>
+```
+
+**6. template/header.php**
+
+**Code**
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -269,9 +300,9 @@ Code
         <div class="content">
 ```
           
-7. template/footer.php
+**7. template/footer.php**
 
-Code
+**Code**
 ```
         </div>
     </div>
@@ -285,38 +316,8 @@ Code
 </html>
 ```
 
-8. index.php (Front Controller)
+**Output**
 
-Code
-```
-<?php
-include "config.php";
-include "class/Database.php";
-include "class/Form.php";
-
-session_start();
-
-// ROUTING
-$url = isset($_GET['url']) ? $_GET['url'] : 'home/index';
-$segments = explode('/', trim($url, '/'));
-
-$mod = isset($segments[0]) ? $segments[0] : 'home';
-$page = isset($segments[1]) ? $segments[1] : 'index';
-
-$file = "module/{$mod}/{$page}.php";
-
-// LOAD TEMPLATE
-include "template/header.php";
-
-if (file_exists($file)) {
-    include $file;
-} else {
-    echo '<div class="error">Modul tidak ditemukan: ' . $mod . '/' . $page . '</div>';
-}
-
-include "template/footer.php";
-?>
-```
 
 
 
