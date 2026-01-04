@@ -580,9 +580,6 @@ Sidebar → 👤 Profile
 ```
 
 ---
-
-**© 2026 - Pemrograman Web 1**
-
 </div>
 
 
